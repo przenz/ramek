@@ -18,8 +18,14 @@ void podglad::paintEvent(QPaintEvent *e){
 
     int srodek=390/2;
     if( ramka>0 ){
-        painter.fillRect(srodek-(obrazSzer/2+paspartu+ramka),srodek-(obrazWys/2+paspartu+ramka)
-                         ,obrazSzer+2*paspartu+2*ramka,obrazWys+2*paspartu+2*ramka,QColor(130,51,0));
+        QRect myQRect(srodek-(obrazSzer/2+paspartu+ramka),srodek-(obrazWys/2+paspartu+ramka)
+                     ,obrazSzer+2*paspartu+2*ramka,obrazWys+2*paspartu+2*ramka);
+        QLinearGradient gradient(myQRect.topLeft(), myQRect.bottomRight()); // diagonal gradient from top-left to bottom-right
+        gradient.setColorAt(0, QColor(110,40,0));
+        gradient.setColorAt(1, QColor(190,81,1));
+        painter.fillRect(myQRect, gradient);
+        //painter.fillRect(srodek-(obrazSzer/2+paspartu+ramka),srodek-(obrazWys/2+paspartu+ramka)
+        //                 ,obrazSzer+2*paspartu+2*ramka,obrazWys+2*paspartu+2*ramka,QColor(130,51,0));
         painter.drawRect(srodek-(obrazSzer/2+paspartu+ramka),srodek-(obrazWys/2+paspartu+ramka)
                          ,obrazSzer+2*paspartu+2*ramka,obrazWys+2*paspartu+2*ramka);
     }

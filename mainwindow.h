@@ -20,6 +20,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
+    void on_wyczyscButton_clicked();
     void on_actionOprogramie_triggered();
     void on_actionZako_triggered();
     void obliczCene();
