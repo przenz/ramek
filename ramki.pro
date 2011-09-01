@@ -18,3 +18,5 @@ HEADERS  += mainwindow.h \
     podglad.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES +=

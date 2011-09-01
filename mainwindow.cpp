@@ -93,3 +93,20 @@ void MainWindow::on_actionOprogramie_triggered()
 {
     QMessageBox::information(this, tr("O programie"),tr("Program dedykuje mojej Kochanej Esterce :) \n - Mateusz"));
 }
+
+
+void MainWindow::on_wyczyscButton_clicked()
+{
+    ui->checkKlejenie->setChecked(false);
+    ui->checkPodporka->setChecked(false);
+    ui->radioSzkloFloat->setChecked(true);
+    ui->editRamkaCena->clear();
+    ui->editRamkaSzer->clear();
+    ui->editPaspartu->clear();
+    ui->editObrazWys->clear();
+    ui->editObrazSzer->clear();
+
+    ui->editObrazWys->setFocus();
+
+    obliczCene();
+}
