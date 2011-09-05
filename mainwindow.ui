@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Ramek v0.2</string>
+   <string>Ramek v0.3</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGroupBox" name="groupBox">
@@ -277,7 +277,7 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>101</width>
+       <width>81</width>
        <height>20</height>
       </rect>
      </property>
@@ -293,6 +293,19 @@
      </property>
      <property name="readOnly">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>zł</string>
      </property>
     </widget>
    </widget>
@@ -334,7 +347,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Szkło float</string>
+      <string>Float</string>
      </property>
      <property name="checked">
       <bool>true</bool>
@@ -350,7 +363,20 @@
       </rect>
      </property>
      <property name="text">
-      <string>Szkło antyreflex</string>
+      <string>Antyreflex</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioLustro">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>40</y>
+       <width>82</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Lustro</string>
      </property>
     </widget>
    </widget>
@@ -420,6 +446,7 @@
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionEdytuj_ceny"/>
     <addaction name="actionOprogramie"/>
     <addaction name="separator"/>
     <addaction name="actionZako"/>
@@ -434,6 +461,11 @@
   <action name="actionZako">
    <property name="text">
     <string>Zakończ</string>
+   </property>
+  </action>
+  <action name="actionEdytuj_ceny">
+   <property name="text">
+    <string>Edytuj ceny</string>
    </property>
   </action>
  </widget>
@@ -605,6 +637,22 @@
     <hint type="destinationlabel">
      <x>240</x>
      <y>318</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioLustro</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>obliczCene()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>319</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>207</x>
+     <y>313</y>
     </hint>
    </hints>
   </connection>

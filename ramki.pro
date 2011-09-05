@@ -12,11 +12,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    podglad.cpp
+    podglad.cpp \
+    edytujceny.cpp
 
 HEADERS  += mainwindow.h \
-    podglad.h
+    podglad.h \
+    edytujceny.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    edytujceny.ui
 
 RESOURCES +=
