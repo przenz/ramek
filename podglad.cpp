@@ -5,7 +5,7 @@
 podglad::podglad(QWidget *parent) :
     QWidget(parent)
 {
-    rozmiar=390;//390
+    rozmiar=390-2;//390
     obrazSzer=0,obrazWys=0,paspartu=0,ramka=0;
     skala=1;
     szklo=1;
@@ -45,7 +45,7 @@ void podglad::paintEvent(QPaintEvent *e){
             QRect myQRect(srodek-(obrazSzer/2+paspartu),srodek-(obrazWys/2+paspartu)
                           ,obrazSzer+2*paspartu,obrazWys+2*paspartu);
             QLinearGradient gradient(myQRect.topLeft(), myQRect.bottomRight()); // diagonal gradient from top-left to bottom-right
-            if(szklo==1){
+            if(szklo==3){
                 gradient.setColorAt(0, QColor(100,100,255,100));
                 gradient.setColorAt(0.3, QColor(255,255,255,150));
                 gradient.setColorAt(0.4, QColor(255,255,255,250));
@@ -58,7 +58,7 @@ void podglad::paintEvent(QPaintEvent *e){
             painter.fillRect(myQRect, gradient);
             //jesli antyrefleks
             if( szklo==2 ){
-                QBrush brusz(QColor(0,0,0,30),Qt::Dense5Pattern);
+                QBrush brusz(QColor(0,0,0,40),Qt::Dense5Pattern);
                 painter.setBrush(brusz);
                 painter.setPen(Qt::NoPen);
                 painter.drawRect(myQRect);
@@ -66,7 +66,7 @@ void podglad::paintEvent(QPaintEvent *e){
         } else if( obrazSzer>0 && obrazWys>0 ){
             QRect myQRect(srodek-obrazSzer/2,srodek-obrazWys/2,obrazSzer,obrazWys);
             QLinearGradient gradient(myQRect.topLeft(), myQRect.bottomRight()); // diagonal gradient from top-left to bottom-right
-            if(szklo==1){
+            if(szklo==3){
                 gradient.setColorAt(0, QColor(100,100,255,100));
                 gradient.setColorAt(0.3, QColor(255,255,255,150));
                 gradient.setColorAt(0.4, QColor(255,255,255,250));
@@ -79,12 +79,11 @@ void podglad::paintEvent(QPaintEvent *e){
             painter.fillRect(myQRect, gradient);
             //jesli antyrefleks
             if( szklo==2 ){
-                QBrush brusz(QColor(0,0,0,30),Qt::Dense5Pattern);
+                QBrush brusz(QColor(0,0,0,60),Qt::Dense5Pattern);
                 painter.setBrush(brusz);
                 painter.setPen(Qt::NoPen);
                 painter.drawRect(myQRect);
             }
-            //painter.fillRect(srodek-obrazSzer/2,srodek-obrazWys/2,obrazSzer,obrazWys,QColor(120,255,120));
         }
     }
 

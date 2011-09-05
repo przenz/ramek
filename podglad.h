@@ -10,8 +10,7 @@ public:
     explicit podglad(QWidget *parent = 0);
 
 private:
-    float obrazWys,obrazSzer,paspartu,ramka;
-    int rozmiar,skala,szklo;
+    float obrazWys,obrazSzer,paspartu,ramka,rozmiar,skala,szklo;
 
 protected:
    void paintEvent(QPaintEvent *);
